@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SubWise — Track Subscriptions Privately</title>
+<meta name="description" content="Track all your subscriptions in one place. No bank access, no account required. 50+ currencies, smart reminders, and total privacy.">
+<meta property="og:title" content="SubWise — Track Subscriptions Privately">
+<meta property="og:description" content="The subscription tracker that isn't a subscription. One-time purchase. No bank access. No account needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://subwise.app">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+  --teal: #1D9E75;
+  --teal-dark: #064E3B;
+  --teal-mid: #0F7B5F;
+  --teal-light: #E8F8F5;
+  --teal-text: #085041;
+  --teal-accent: #9FE1CB;
+  --bg: #FAFCFB;
+  --text: #1a1a1a;
+  --text2: #555;
+  --text3: #888;
+  --card: #fff;
+  --border: #e8e8e8;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+.nav-logo svg { flex-shrink: 0; }
+.nav-links { display: flex; gap: 28px; font-size: 15px; }
+.nav-links a { color: var(--text2); }
+.nav-links a:hover { color: var(--teal); text-decoration: none; }
+
+/* Hero */
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+.hero-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 28px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero h1 span { color: var(--teal); }
+.hero p {
+  font-size: 20px;
+  color: var(--text2);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.5;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.hero-cta:hover { background: var(--teal-mid); text-decoration: none; }
+.hero-cta svg { width: 20px; height: 20px; }
+.hero-badge {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text3);
+}
+
+/* Features */
+.features {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.feature-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+.feature-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* Pricing */
+.pricing {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  text-align: center;
+}
+.pricing h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pricing .sub {
+  font-size: 17px;
+  color: var(--text2);
+  margin-bottom: 32px;
+}
+.pricing-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.price-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: left;
+}
+.price-card.pro {
+  background: linear-gradient(145deg, var(--teal-dark), var(--teal));
+  border: none;
+  color: #fff;
+}
+.price-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.price-card .price { font-size: 36px; font-weight: 700; margin: 12px 0 4px; }
+.price-card .price-sub { font-size: 14px; color: var(--text3); margin-bottom: 20px; }
+.price-card.pro .price-sub { color: var(--teal-accent); }
+.price-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.price-card li {
+  font-size: 14px;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.price-card.pro li { color: rgba(255,255,255,0.85); }
+.check { color: var(--teal); font-weight: 700; font-size: 16px; }
+.price-card.pro .check { color: var(--teal-accent); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+}
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.footer-links a { color: var(--text2); }
+.footer-copy { font-size: 13px; color: var(--text3); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 17px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-cards { grid-template-columns: 1fr; }
+  .nav-links { gap: 16px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 1024 1024">
+      <defs><linearGradient id="ng" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#25B883"/><stop offset="100%" stop-color="#167A5B"/></linearGradient></defs>
+      <rect width="1024" height="1024" rx="228" fill="url(#ng)"/>
+      <g transform="translate(512,512)"><path d="M-60,-195 C100,-195 155,-130 155,-55 C155,25 90,70 0,70 C-55,70 -110,50 -155,70 C-155,70 -155,115 -85,155 C-15,195 65,195 65,195" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </svg>
+    SubWise
+  </div>
+  <div class="nav-links">
+    <a href="privacy">Privacy</a>
+    <a href="support">Support</a>
+    <a href="terms">Terms</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">
+    <svg width="100" height="100" viewBox="0 0 1024 1024">
+      <defs><linearGradient id="hg" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#25B883"/><stop offset="100%" stop-color="#167A5B"/></linearGradient></defs>
+      <rect width="1024" height="1024" rx="228" fill="url(#hg)"/>
+      <g transform="translate(512,512)"><path d="M-60,-195 C100,-195 155,-130 155,-55 C155,25 90,70 0,70 C-55,70 -110,50 -155,70 C-155,70 -155,115 -85,155 C-15,195 65,195 65,195" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </svg>
+  </div>
+  <h1>Track subscriptions.<br><span>Keep your money.</span></h1>
+  <p>See exactly what you're spending on recurring charges. No bank access, no account, no data collected. Ever.</p>
+  <a href="https://apps.apple.com/app/subwise-subscription-tracker/idXXXXXXXXX" class="hero-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83z"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download on the App Store
+  </a>
+  <span class="hero-badge">Free with optional Pro upgrade — $6.99 one-time</span>
+</section>
+
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>100% private</h3>
+      <p>No bank access. No account. No tracking. Everything stays on your device with optional iCloud sync.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+      <h3>Smart reminders</h3>
+      <p>Get notified before renewals and trial expirations so you never pay for something you forgot about.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+      <h3>50+ currencies</h3>
+      <p>Track subscriptions in any currency. SubWise converts everything to your home currency automatically.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h3>Calendar view</h3>
+      <p>See every renewal projected on a calendar. Know exactly what's coming before it hits your account.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <h3>AI receipt scanner</h3>
+      <p>Scan a receipt or billing email and SubWise extracts the service, amount, and date automatically.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>Widgets & Dynamic Island</h3>
+      <p>See your monthly spend on your home screen. Track trial countdowns right on the Dynamic Island.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <h2>Simple pricing</h2>
+  <p class="sub">The subscription tracker that isn't a subscription.</p>
+  <div class="pricing-cards">
+    <div class="price-card">
+      <h3>Free</h3>
+      <div class="price">$0</div>
+      <div class="price-sub">Forever free</div>
+      <ul>
+        <li><span class="check">✓</span> Up to 10 subscriptions</li>
+        <li><span class="check">✓</span> Dashboard & donut chart</li>
+        <li><span class="check">✓</span> Calendar with renewal dates</li>
+        <li><span class="check">✓</span> Smart renewal reminders</li>
+        <li><span class="check">✓</span> 50+ currencies</li>
+        <li><span class="check">✓</span> Small home screen widget</li>
+      </ul>
+    </div>
+    <div class="price-card pro">
+      <h3>SubWise Pro</h3>
+      <div class="price">$6.99</div>
+      <div class="price-sub">One-time purchase. Forever.</div>
+      <ul>
+        <li><span class="check">✓</span> Unlimited subscriptions</li>
+        <li><span class="check">✓</span> AI receipt scanning</li>
+        <li><span class="check">✓</span> Premium widgets & Live Activities</li>
+        <li><span class="check">✓</span> Spending trends & insights</li>
+        <li><span class="check">✓</span> Export to CSV & PDF</li>
+        <li><span class="check">✓</span> Custom categories & app icons</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms & Conditions</a>
+      <a href="support">Support</a>
+      <a href="mailto:support@subwise.app">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Zeeshan Ahmed. Made in Abu Dhabi.</div>
+  </div>
+</footer>
+
+</body>
+</html>
