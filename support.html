@@ -5,123 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — SubWise</title>
 <meta name="description" content="SubWise support and frequently asked questions.">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --teal:#1D9E75; --teal-dark:#064E3B; --teal-light:#E8F8F5; --teal-text:#085041; --bg:#FAFCFB; --text:#1a1a1a; --text2:#555; --text3:#888; --card:#fff; --border:#e8e8e8; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',system-ui,sans-serif; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; line-height:1.6; }
-a { color:var(--teal); text-decoration:none; }
-a:hover { text-decoration:underline; }
-nav { display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:20px 24px; }
-.nav-logo { display:flex; align-items:center; gap:10px; font-size:20px; font-weight:700; color:var(--text); }
-.nav-links { display:flex; gap:28px; font-size:15px; }
-.nav-links a { color:var(--text2); }
-.nav-links a:hover { color:var(--teal); text-decoration:none; }
-.content { max-width:680px; margin:0 auto; padding:60px 24px 80px; }
-.content h1 { font-size:36px; font-weight:700; margin-bottom:8px; }
-.content .sub { font-size:17px; color:var(--text2); margin-bottom:40px; }
-.faq { margin-bottom:24px; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; }
-.faq h3 { font-size:17px; font-weight:600; margin-bottom:8px; color:var(--text); }
-.faq p { font-size:15px; color:var(--text2); line-height:1.6; margin:0; }
-.contact-card { background:var(--teal-light); border-radius:12px; padding:28px; text-align:center; margin-top:40px; }
-.contact-card h2 { font-size:20px; font-weight:600; color:var(--teal-text); margin-bottom:8px; }
-.contact-card p { font-size:15px; color:var(--teal-text); margin-bottom:16px; }
-.contact-btn { display:inline-block; background:var(--teal); color:#fff; padding:12px 28px; border-radius:10px; font-size:15px; font-weight:600; }
-.contact-btn:hover { background:var(--teal-dark); text-decoration:none; }
-footer { border-top:1px solid var(--border); padding:32px 24px; text-align:center; }
-.footer-inner { max-width:960px; margin:0 auto; }
-.footer-links { display:flex; justify-content:center; gap:24px; margin-bottom:12px; font-size:14px; }
-.footer-links a { color:var(--text2); }
-.footer-copy { font-size:13px; color:var(--text3); }
-@media(max-width:768px) { .content h1{font-size:28px;} .nav-links{gap:16px;font-size:14px;} }
+:root{--teal:#1D9E75;--teal-dark:#0B5E45;--teal-deep:#064E3B;--teal-light:#E8F8F2;--cream:#FDFBF7;--warm:#F8F6F1;--text:#1B2B27;--text2:#4A5E58;--text3:#8A9E97;--border:#D8E0DC}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Instrument Sans',-apple-system,system-ui,sans-serif;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.65}
+a{color:var(--teal);text-decoration:none}a:hover{text-decoration:underline}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+nav{max-width:820px;margin:0 auto;padding:24px 24px 0;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text2);transition:color .2s}.nav-links a:hover{color:var(--teal);text-decoration:none}
+.content{max-width:620px;margin:0 auto;padding:80px 24px 80px}
+.content h1{font-family:'DM Serif Display',Georgia,serif;font-size:40px;font-weight:400;margin-bottom:8px}
+.content-sub{font-size:16px;color:var(--text2);margin-bottom:48px}
+.faq{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.faq:last-of-type{border-bottom:none}
+.faq h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.faq p{font-size:15px;color:var(--text2);line-height:1.65}
+.contact-card{background:var(--warm);border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center;margin-top:48px}
+.contact-card h2{font-family:'DM Serif Display',Georgia,serif;font-size:24px;font-weight:400;margin-bottom:8px}
+.contact-card p{font-size:15px;color:var(--text2);margin-bottom:20px}
+.contact-btn{display:inline-block;background:var(--teal);color:#fff;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:all .2s}
+.contact-btn:hover{background:var(--teal-dark);text-decoration:none}
+footer{max-width:820px;margin:0 auto;padding:0 24px 48px}
+.footer-inner{border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.footer-name{font-weight:600;font-size:14px;margin-bottom:4px}.footer-copy{font-size:13px;color:var(--text3)}
+.footer-links{display:flex;gap:20px;font-size:13px}.footer-links a{color:var(--text2)}
+@media(max-width:700px){.content h1{font-size:32px}.nav-links{gap:16px;font-size:13px}}
 </style>
 </head>
 <body>
-
 <nav>
-      <a href="/subwise-webpages/" class="nav-logo">
-    <svg width="32" height="32" viewBox="0 0 1024 1024"><defs><linearGradient id="ng" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#25B883"/><stop offset="100%" stop-color="#167A5B"/></linearGradient></defs><rect width="1024" height="1024" rx="228" fill="url(#ng)"/><g transform="translate(512,512)"><path d="M-60,-195 C100,-195 155,-130 155,-55 C155,25 90,70 0,70 C-55,70 -110,50 -155,70 C-155,70 -155,115 -85,155 C-15,195 65,195 65,195" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+  <a href="/subwise-webpages/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 1024 1024"><defs><linearGradient id="ng" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#25B883"/><stop offset="100%" stop-color="#167A5B"/></linearGradient></defs><rect width="1024" height="1024" rx="228" fill="url(#ng)"/><g transform="translate(512,512)"><path d="M-60,-195 C100,-195 155,-130 155,-55 C155,25 90,70 0,70 C-55,70 -110,50 -155,70 C-155,70 -155,115 -85,155 C-15,195 65,195 65,195" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
     SubWise
   </a>
   <div class="nav-links">
-    <a href="https://zeeshan0075.github.io/subwise-webpages/privacy">Privacy</a>
-    <a href="https://zeeshan0075.github.io/subwise-webpages/support">Support</a>
-    <a href="https://zeeshan0075.github.io/subwise-webpages/terms">Terms</a>
+    <a href="/subwise-webpages/privacy">Privacy</a>
+    <a href="/subwise-webpages/support">Support</a>
+    <a href="/subwise-webpages/terms">Terms</a>
   </div>
 </nav>
-
 <div class="content">
   <h1>Support</h1>
-  <p class="sub">Find answers to common questions below, or contact us directly.</p>
+  <p class="content-sub">Common questions answered. If yours isn't here, email me directly — I respond to every message personally.</p>
 
-  <div class="faq">
-    <h3>How do I add a subscription?</h3>
-    <p>Tap the green "+" button on any screen. Start typing the service name — SubWise will suggest from 168+ popular services with auto-filled pricing and category. Adjust any details, then tap Save.</p>
-  </div>
+  <div class="faq"><h3>How do I add a subscription?</h3><p>Tap the green "+" button on any screen. Start typing the service name — SubWise suggests from 168+ popular services with auto-filled pricing and category. Adjust any details, then tap Save.</p></div>
 
-  <div class="faq">
-    <h3>How do I edit or delete a subscription?</h3>
-    <p>In the Subscriptions tab, swipe left on any subscription to see Archive and Delete options. Swipe right to Edit. You can also tap a subscription to view its full details, then tap Edit or Delete from there.</p>
-  </div>
+  <div class="faq"><h3>How do I edit or delete a subscription?</h3><p>In the Subscriptions tab, swipe left for Archive and Delete options. Swipe right to Edit. You can also tap any subscription to see its full details, then tap Edit or Delete from there.</p></div>
 
-  <div class="faq">
-    <h3>How do I change my currency?</h3>
-    <p>Go to Settings → Home currency → Select your preferred currency from 50+ options. All totals across the app will automatically convert to your new home currency.</p>
-  </div>
+  <div class="faq"><h3>How do I change my currency?</h3><p>Go to Settings → Home currency → choose from 50+ options. All totals across the app will convert to your new home currency automatically.</p></div>
 
-  <div class="faq">
-    <h3>What is SubWise Pro?</h3>
-    <p>SubWise Pro is a one-time purchase of $6.99 that unlocks unlimited subscriptions, AI receipt scanning, premium widgets, spending trends and insights, CSV/PDF export, custom categories, and alternate app icons. It is not a subscription — you pay once and keep it forever.</p>
-  </div>
+  <div class="faq"><h3>What is SubWise Pro?</h3><p>A one-time purchase of $6.99 that unlocks unlimited subscriptions, AI receipt scanning, premium widgets, spending trends, CSV/PDF export, custom categories, and alternate app icons. It is not a subscription — you pay once, keep it forever.</p></div>
 
-  <div class="faq">
-    <h3>How do I restore my purchase?</h3>
-    <p>Go to Settings → scroll down to Legal → Tap "Restore purchases." If you previously purchased SubWise Pro on any device with the same Apple ID, it will be restored automatically at no additional charge.</p>
-  </div>
+  <div class="faq"><h3>How do I restore my purchase?</h3><p>Settings → scroll to Legal → Restore purchases. If you previously bought SubWise Pro on any device with the same Apple ID, it restores automatically at no charge.</p></div>
 
-  <div class="faq">
-    <h3>Is my data private?</h3>
-    <p>Yes — completely. SubWise stores all data locally on your device. We have no servers, no accounts, and no way to access your data. If you enable iCloud sync, your data syncs through Apple's private CloudKit container, which only you can access. We earn the App Store's "Data Not Collected" privacy label because we genuinely collect nothing.</p>
-  </div>
+  <div class="faq"><h3>Is my data private?</h3><p>Yes — completely. SubWise stores all data locally on your device. There are no servers, no accounts, and no way for us to access your data. If you enable iCloud sync, it goes through Apple's private CloudKit — only you can access it. We earn Apple's "Data Not Collected" privacy label because we genuinely collect nothing.</p></div>
 
-  <div class="faq">
-    <h3>How does the receipt scanner work?</h3>
-    <p>The AI scanner uses Apple's Vision framework to read text from a receipt or billing email screenshot. It extracts the service name, amount, currency, and date, then lets you review and confirm before saving. All processing happens on your device — no images are uploaded anywhere. This feature requires SubWise Pro.</p>
-  </div>
+  <div class="faq"><h3>How does the receipt scanner work?</h3><p>The scanner uses Apple's Vision framework to read text from a receipt or billing email screenshot. It extracts the service name, amount, currency, and date, then lets you review and confirm before saving. All processing happens on your device — no images leave your phone. Requires SubWise Pro.</p></div>
 
-  <div class="faq">
-    <h3>How do I add widgets to my home screen?</h3>
-    <p>Long-press on your iPhone home screen → Tap the "+" button in the top-left → Search for "SubWise" → Choose a widget size (small, medium, or large) → Tap "Add Widget." The small widget is free; medium, large, and lock screen widgets require SubWise Pro.</p>
-  </div>
+  <div class="faq"><h3>How do I add widgets?</h3><p>Long-press your iPhone home screen → tap "+" in the top-left → search "SubWise" → choose a size → tap "Add Widget." The small widget is free. Medium, large, and lock screen widgets require Pro.</p></div>
 
-  <div class="faq">
-    <h3>Does SubWise work offline?</h3>
-    <p>Yes. All core features work without an internet connection. The only feature that requires connectivity is currency exchange rate updates, which refresh every 7 days. If you're offline, SubWise uses the last cached exchange rates.</p>
-  </div>
+  <div class="faq"><h3>Does SubWise work offline?</h3><p>Yes. Everything works without internet. The only online feature is currency rate updates, which refresh every 7 days. Offline, SubWise uses the last cached rates.</p></div>
 
-  <div class="faq">
-    <h3>Can I export my subscription data?</h3>
-    <p>Yes — with SubWise Pro, go to Settings → Export data → Choose CSV or PDF format. The export includes all your subscription details and can be shared via email, AirDrop, or any other sharing method. This feature requires SubWise Pro.</p>
-  </div>
+  <div class="faq"><h3>Can I export my data?</h3><p>With Pro, go to Settings → Export data → choose CSV or PDF. The export includes all subscription details and can be shared via email, AirDrop, or any method. Requires SubWise Pro.</p></div>
 
   <div class="contact-card">
     <h2>Still need help?</h2>
-    <p>We're a solo developer team and respond to every email personally.</p>
-    <a href="mailto:businessforzeeshan@gmail.com" class="contact-btn">Email businessforzeeshan@gmail.com</a>
+    <p>I'm a solo developer and I read every email personally.</p>
+    <a href="mailto:businessforzeeshan@gmail.com" class="contact-btn">Email me directly</a>
   </div>
 </div>
-
 <footer>
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="https://zeeshan0075.github.io/subwise-webpages/privacy">Privacy Policy</a>
-      <a href="https://zeeshan0075.github.io/subwise-webpages/terms">Terms & Conditions</a>
-      <a href="https://zeeshan0075.github.io/subwise-webpages/support">Support</a>
-      <a href="mailto:businessforzeeshan@gmail.com">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Zeeshan Ahmed. Made in Abu Dhabi.</div>
+    <div class="footer-left"><div class="footer-name">SubWise</div><div class="footer-copy">© 2026 Zeeshan Ahmed · Built in Abu Dhabi</div></div>
+    <div class="footer-links"><a href="/subwise-webpages/privacy">Privacy</a><a href="/subwise-webpages/terms">Terms</a><a href="/subwise-webpages/support">Support</a><a href="mailto:businessforzeeshan@gmail.com">Contact</a></div>
   </div>
 </footer>
-
 </body>
 </html>
